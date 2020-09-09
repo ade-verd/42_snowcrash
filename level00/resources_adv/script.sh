@@ -1,21 +1,23 @@
 #!/bin/bash
 
-LEVEL="00"
+function caesarSolver {
+    if [ ! "$#" -eq 1 ]; then
+        echo Usage "./$(basename $0) <string>"
+        exit 1
+    fi
 
-export SNOW_USER="level$LEVEL"
-export SNOW_PORT="4242"
+    for i in $(seq 15); do
+        echo $i $1 | tr $(printf %${i}s | tr ' ' '.')\a-z a-za-z
+    done
+}
 
-if [ -z ${SNOW_HOST+x} ]; then read -p "VM Host: " SNOW_HOST; fi
-if [ -z ${SNOW_PORT+x} ]; then read -p "VM Port (ex: 4242): " SNOW_PORT; fi
-if [ -z ${SNOW_USER+x} ]; then read -p "VM User (ex: level00): " SNOW_USER; fi
+set -x;
+OUTPUT=`find / -user flag00 2>/dev/null | head -1`
+OUTPUT=`cat $OUTPUT`
 
-CURDIR=`dirname $0`
-FLAG_LEVEL="flag$LEVEL"
-FLAG_CONTENT=`cat $CURDIR/../flag`
+set +x;
+echo -e "\nThen use caesar cipher solver"
+caesarSolver $OUTPUT
 
-# Run solver.sh on level user
-ssh -t -q $SNOW_USER@$SNOW_HOST -p $SNOW_PORT "bash -s" -- < ./solver.sh
-
-# Then check flag on flag user
-ssh -t -q $FLAG_LEVEL@$SNOW_HOST -p $SNOW_PORT "getflag"
-echo -e "\nExpected flag: $FLAG_CONTENT"
+PASSWORD=`caesarSolver $OUTPUT | grep 'hard' | cut -d ' ' -f2`
+echo -e "\nFlag00 Password is: $PASSWORD\n"
