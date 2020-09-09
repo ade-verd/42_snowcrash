@@ -1,6 +1,12 @@
 # Level00 - Flag00
 
-## Steps to resolve
+## Local script usage
+
+```
+Usage: ./main.sh
+```
+
+## Steps to resolve on VM
 
 1. Find files owned by the user `flag00` or the group `flag00`
 

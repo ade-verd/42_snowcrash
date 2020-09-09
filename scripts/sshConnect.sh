@@ -6,4 +6,10 @@ if [ -z ${SNOW_USER+x} ]; then read -p "VM User (ex: level00): " SNOW_USER; fi
 
 set -x
 
-ssh $SNOW_USER@$SNOW_HOST -p $SNOW_PORT
+if [ $# -gt 0 ]; then
+    echo $@
+    ssh -t -q $SNOW_USER@$SNOW_HOST -p $SNOW_PORT < $@
+else
+    ssh -q $SNOW_USER@$SNOW_HOST -p $SNOW_PORT
+fi
+

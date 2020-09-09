@@ -1,6 +1,7 @@
 #! /bin/bash
 
 NAME="snowcrash"
+VM_PORT="4242"
 
 # set -x
 VM_NAME=`VBoxManage list vms | grep -i $NAME | head -1 | grep -oP '\"\K[^" ]+'`
@@ -32,3 +33,4 @@ fi
 
 echo -e "You should set its IP as environment variable\n"
 echo "export SNOW_HOST=$VM_IP"
+echo "export SNOW_PORT=$VM_PORT"
