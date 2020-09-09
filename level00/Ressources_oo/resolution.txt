@@ -1,0 +1,21 @@
+// First we need to find all files owned by the 'flag00' user
+
+'find / -user flag00 2>/dev/null'
+=> /usr/sbin/john
+=> /rofs/usr/sbin/john
+
+// By displaying the file found, we find a string.
+
+'cat /usr/sbin/john'
+=> cdiiddwpgswtgt
+
+// It doesn't work as password, apparently it's coded in ROT algorithm
+// that we will decode with bruteforce via 'http://theblob.org/rot.cgi'
+// and gives us 'nottoohardhere' in ROT-11 step :D
+
+// After trying this password, it works and we execute 'getflag' to obtain our flag
+
+'su flag00'
+'nottoohardhere'
+'getflag'
+=> x24ti5gi3x0ol2eh4esiuxias
