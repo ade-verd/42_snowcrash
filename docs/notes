@@ -1,0 +1,11 @@
+.bashrc contient: 
+alias='su -c "cd;/bin/bash"' cd
+
+level1:
+cat /etc/passwd
+https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/
+
+level5:
+cat /var/mail/level5
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+
