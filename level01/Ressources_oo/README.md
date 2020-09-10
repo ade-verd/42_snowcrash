@@ -34,7 +34,8 @@ cat /etc/passwd
 
 cat /etc/passwd | grep flag01
 > flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
-# We can notice in the 'flag01' line that there is an hashed password
+# We can notice in the 'flag01' line that there is an hashed password,
+# in opposite to the other passwords who are shadowed with "x"
 ```
 
 3. Use John the Ripper external hacking tool to decode this password. (with a docker container)
