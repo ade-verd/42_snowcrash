@@ -15,7 +15,7 @@ PASSWORD_PATH="/etc/$PASSWORD"
 apt-get update && apt-get install -y openssh-client && apt-get install -y john
 
 # Copy the passwords file
-echo -e "\n\nlevel01 password is : $PW\n"
+echo -e "\n\n$SNOW_USER password is : $PW\n"
 scp -q -o "StrictHostKeyChecking no" -P $SNOW_PORT $SNOW_USER@$SNOW_HOST:$PASSWORD_PATH ./
 
 # Decrypt the password with john the ripper
