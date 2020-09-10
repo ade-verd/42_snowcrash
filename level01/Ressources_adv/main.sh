@@ -20,7 +20,7 @@ DEST_FILE="/tmp/passwd"
 
 # Bruteforce using John-The-Ripper
 JTR_OUTPUT="/tmp/jtp_output"
-(set -x; docker run -it -v $DEST_FILE:/crackme.txt adamoss/john-the-ripper /crackme.txt > $JTR_OUTPUT)
+(set -x; docker run -it --rm -v $DEST_FILE:/crackme.txt adamoss/john-the-ripper /crackme.txt > $JTR_OUTPUT)
 echo ; cat $JTR_OUTPUT
 
 # Then check flag on flag user
