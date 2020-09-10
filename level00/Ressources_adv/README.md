@@ -2,9 +2,17 @@
 
 ## Local script usage
 
-```
+```shell
 Usage: ./main.sh
 ```
+
+## Passwords and token
+
+|         |                             |
+| ------- | --------------------------- |
+| level00 | `level00`                   |
+| flag00  | `nottoohardhere`            |
+| token   | `x24ti5gi3x0ol2eh4esiuxias` |
 
 ## Steps to resolve on VM
 
