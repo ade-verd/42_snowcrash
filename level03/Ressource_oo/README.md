@@ -1,4 +1,4 @@
-# Level02 - Flag02
+# Level03 - Flag03
 
 ## Local script usage
 
@@ -10,19 +10,26 @@ Usage: ./main.sh
 
 |         |                             |
 | ------- | --------------------------- |
-| level02 | `level02`                   |
-| flag02  | `ft_waNDReL0L`              |
+| level03 | `kooda2puivaav1idi4f57q8iq` |
+| flag03  | `ft_waNDReL0L`              |
 | token   | `kooda2puivaav1idi4f57q8iq` |
 
 ## Steps to resolve on VM
 
-1. Connect to `level02` user and check the repo to find a PCAP file
+1. Connect to `level03` user and check the repo to find an executable with 's'(setuid) permission
 
 ```bash
-su level02
+su level03
 # Enter the token
-ls
-> level02.pcap
+
+ls -l
+> total 12
+> -rwsr-sr-x 1 flag03 level03 8627 Mar  5  2016 level03
+
+# The 's' means that by executing this 'level03',
+# we will get the persmissions of the individual or group that owns the file
+./level03
+> Exploit me
 ```
 
 2. Use TCPICK tool to open this PCAP file. (with a docker container)
@@ -62,12 +69,6 @@ ssh -t -q $FLAG_LEVEL@$SNOW_HOST -p $SNOW_PORT "getflag"
 
 ## Sources
 
-### PCAP
+### SHELL
 
-- [PCAP explanations](https://www.reviversoft.com/fr/file-extensions/pcap)
-- [PCAP how to read it](https://serverfault.com/questions/38626/how-can-i-read-pcap-files-in-a-friendly-format/38632)
-- [TCPICK man, to read Unprintable characters](https://linux.die.net/man/8/tcpick)
-
-### ASCII
-
-- [ASCII (DEL key)](http://www.robelle.com/smugbook/ascii.html#:~:text=The%20ASCII%20character%20set%20defines,and%200%20to%20177%20octal)
+- [What does s permission means ?](https://askubuntu.com/questions/431372/what-does-s-permission-means#:~:text=s%20(setuid)%20means%20set%20user%20ID%20upon%20execution.&text=In%20this%20s%20permission%20was,user%2DID%20mode%20is%20set.)
