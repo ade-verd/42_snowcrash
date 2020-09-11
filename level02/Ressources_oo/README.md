@@ -10,7 +10,7 @@ Usage: ./main.sh
 
 |         |                             |
 | ------- | --------------------------- |
-| level02 | `level02`                   |
+| level02 | `f2av5il02puano7naaf6adaaf` |
 | flag02  | `ft_waNDReL0L`              |
 | token   | `kooda2puivaav1idi4f57q8iq` |
 
