@@ -6,7 +6,7 @@ USER="level$LEVEL"
 PASSWORD="level00"
 
 CURDIR=`dirname $0`
-SCRIPT="$CURDIR/script.sh"
+SCRIPT="$CURDIR/vm_script.sh"
 
 if [ -z ${SNOW_HOST+x} ]; then read -p "VM Host: " SNOW_HOST; fi
 if [ -z ${SNOW_PORT+x} ]; then read -p "VM Port: " SNOW_PORT; fi
