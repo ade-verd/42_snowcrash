@@ -19,7 +19,7 @@ Usage: ./main.sh
 1. Connect to `level05` user and notice there is a new mail
 
 ```bash
-su level04
+su level05
 # Enter the token
 > You have new mail.
 ```

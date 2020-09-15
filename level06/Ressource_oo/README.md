@@ -19,7 +19,7 @@ Usage: ./main.sh
 1. Connect to `level06` user and notice there is an executable and a php script owned by `flag06` user
 
 ```bash
-su level04
+su level06
 # Enter the token
 
 ls -l
