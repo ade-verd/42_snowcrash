@@ -16,7 +16,7 @@ FLAG_CONTENT=`cat $CURDIR/../flag`
 FLAG="flag$LEVEL"
 
 # Connect to 'level09'
-echo -e "\n\n$SNOW_USER password is : $PW\n"
+echo -e "\n$SNOW_USER password is : $PW\n"
 ssh -p $SNOW_PORT $SNOW_USER@$SNOW_HOST 'bash' < $CURDIR/script.sh
 
 # Connect to 'flag09' to get the flag
