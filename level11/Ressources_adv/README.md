@@ -11,7 +11,7 @@ Usage: ./main.sh
 |         |                             |
 | ------- | --------------------------- |
 | level11 | `feulo4b72j7edeahuete3no7c` |
-| flag11  | ``                          |
+| flag11  |                             |
 | token   | `fa6v5ateaw21peobuub8ipe6s` |
 
 ## Steps to resolve on VM
