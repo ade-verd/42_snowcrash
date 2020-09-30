@@ -16,5 +16,5 @@ FLAG_CONTENT=`cat $CURDIR/../flag`
 
 # Connect to 'level03'
 echo -e "\n$SNOW_USER password is : $PW\n"
-ssh -p $SNOW_PORT $SNOW_USER@$SNOW_HOST 'bash' < $CURDIR/script.sh
+ssh -t -p $SNOW_PORT $SNOW_USER@$SNOW_HOST 'bash' < $CURDIR/script.sh
 echo -e "\nExpected flag: $FLAG_CONTENT"

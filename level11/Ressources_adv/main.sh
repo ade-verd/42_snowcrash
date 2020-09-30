@@ -16,8 +16,9 @@ FLAG_LEVEL="flag$LEVEL"
 FLAG_CONTENT=`cat $CURDIR/../flag`
 
 # Connect to level and run the script
-echo -e "\n$USER password is : $PW\n"
-ssh -t -q -p $SNOW_PORT $USER@$SNOW_HOST 'bash' < $CURDIR/script.sh
+echo -e "$USER password is : $PW\n"
+(set -x 
+ssh -t -q -p $SNOW_PORT $USER@$SNOW_HOST 'bash' < $CURDIR/script.sh)
 
 # Check flag password and token
 echo -e "\nExpected flag: $FLAG_CONTENT"

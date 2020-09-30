@@ -20,7 +20,7 @@ FLAG_CONTENT=`cat $CURDIR/../flag`
 # Connect to 'level10' and run the script
 echo -e "\n$USER password is : $PW\n"
 (set -x
-ssh -q -p $SNOW_PORT $USER@$SNOW_HOST 'bash' < $CURDIR/script.sh | tee $OUTPUT)
+ssh -t -q -p $SNOW_PORT $USER@$SNOW_HOST 'bash' < $CURDIR/script.sh | tee $OUTPUT)
 
 LASTLINE=`awk '/./{line=$0} END{print line}' $OUTPUT`
 if [[ "$LASTLINE" == *"Please retry"* ]]; then exit 1; fi
