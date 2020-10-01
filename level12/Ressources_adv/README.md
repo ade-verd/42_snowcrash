@@ -10,8 +10,8 @@ Usage: ./main.sh
 
 |         |                             |
 | ------- | --------------------------- |
-| level11 | `fa6v5ateaw21peobuub8ipe6s` |
-| flag11  |                             |
+| level12 | `fa6v5ateaw21peobuub8ipe6s` |
+| flag12  |                             |
 | token   | `g1qKMiRpXf53AWhDaU7FEkczr` |
 
 ## Steps to resolve on VM

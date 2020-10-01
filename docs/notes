@@ -1,9 +1,0 @@
-.bashrc contient: 
-alias='su -c "cd;/bin/bash"' cd
-
-level5:
-cat /var/mail/level5
-*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
-
-Reset a forgotten root password using a live distribution
-http://www.microhowto.info/howto/reset_a_forgotten_root_password_using_a_live_distribution.html
