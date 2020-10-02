@@ -250,7 +250,7 @@ Dump of assembler code for function main:
    0x08048ddb <+1173>:	mov    %eax,(%esp)
    0x08048dde <+1176>:	call   0x8048530 <fputs@plt>
    0x08048de3 <+1181>:	jmp    0x8048e2f <main+1257>
-   0x08048de5 <+1183>:	mov    0x804b060,%eax
+   0x08048de5 <+1183>:	mov    0x804b060,%eax               #### jump here if getuid === 3014   
    0x08048dea <+1188>:	mov    %eax,%ebx
    0x08048dec <+1190>:	movl   $0x8049220,(%esp)
    0x08048df3 <+1197>:	call   0x8048604 <ft_des>
