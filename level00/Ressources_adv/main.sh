@@ -14,7 +14,7 @@ if [ -z ${SNOW_PORT+x} ]; then read -p "VM Port: " SNOW_PORT; fi
 echo -e "$USER Password is: $PASSWORD"
 
 # Run script.sh on level user
-ssh -q $USER@$SNOW_HOST -p $SNOW_PORT < $SCRIPT
+ssh -t -q $USER@$SNOW_HOST -p $SNOW_PORT < $SCRIPT
 
 # Then check flag on flag user
 FLAG_LEVEL="flag$LEVEL"
