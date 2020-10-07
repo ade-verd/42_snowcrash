@@ -32,6 +32,8 @@ We tried to find another file with extended permission, but nothing.
 
 So we decided to investigate the getflag binary.
 
+2. Investigate the getflag binary
+
 Using `strings` is not clear enough to debug. We used `gdb` instead.
 
 ```bash
@@ -49,6 +51,8 @@ gdb /bin/getflag
 ```
 
 It seems there is a protection against debugging
+
+3. Bypass antidebugging protection
 
 ```bash
 # main disassembler
@@ -117,6 +121,8 @@ gdb /bin/getflag
 
 Good point here, because we successfully bypassed ptrace and the program has been executed normally.
 
+4. Search a security hole
+
 Lets check the disassembled main
 
 ```asm
@@ -165,6 +171,8 @@ cat /etc/passwd | grep flag
 So we need to search what the hexadecimal value of 3014 which is 0xbc6.
 
 The register used is still `eax`. We have to replace the register value after `getuid` syscall and before comparisons. We can do that with a breakpoint.
+
+5. Modify the value of the register used by `getuid`
 
 ```shell
 gdb /bin/getflag

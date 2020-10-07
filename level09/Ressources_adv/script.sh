@@ -5,7 +5,9 @@ function hexToDec {
 }
 
 function level09Decoder {
-    XXD_OUTPUT=`xxd -c 1 -l 25 $1`
+    (set -x
+    xxd -c 1 -l 25 $1 | tee /tmp/out)
+    XXD_OUTPUT=`cat /tmp/out`
 
     PASSWORD=''
 
