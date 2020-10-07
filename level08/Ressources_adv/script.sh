@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
 
-# 1. Change the LOGNAME env variable to getflag command
+# 1. Create symbolic link of token with an other name than "token"
 ln -sf ~/token /tmp/link
 
-# 2. Execute the C program
+# 2. Execute level08 with symlink as parameter
 ./level08 /tmp/link

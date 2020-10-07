@@ -15,6 +15,6 @@ if [ -z ${SNOW_PORT+x} ]; then read -p "VM Port: " SNOW_PORT; fi
 FLAG_CONTENT=`cat $CURDIR/../flag`
 
 # Connect to 'level03'
-echo -e "\n$SNOW_USER password is : $PW\n"
-ssh -t -p $SNOW_PORT $SNOW_USER@$SNOW_HOST 'bash' < $CURDIR/script.sh
+echo -e "$SNOW_USER password is : $PW\n"
+ssh -t -q -p $SNOW_PORT $SNOW_USER@$SNOW_HOST 'bash' < $CURDIR/script.sh
 echo -e "\nExpected flag: $FLAG_CONTENT"
