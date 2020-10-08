@@ -1,12 +1,9 @@
 #!/bin/bash
 
 LEVEL="01"
-PW="x24ti5gi3x0ol2eh4esiuxias"
-
-export SNOW_USER="level$LEVEL"
-export SNOW_PORT="4242"
 
 if [ -z ${SNOW_HOST+x} ]; then read -p "VM Host: " SNOW_HOST; fi
+if [ -z ${SNOW_PORT+x} ]; then read -p "VM Port: " SNOW_PORT; fi
 
 CURDIR=`dirname $0`
 CURDIR_ABS=`dirname "$(readlink -f "$0")"`
