@@ -12,7 +12,7 @@ PASSWORD=`cat $CURDIR/../../level$PREV_LEVEL/flag`
 IMAGE="kalilinux/kali-rolling"
 CONTAINER="kali$LEVEL"
 
-SCRIPT_NAME="kali_script.sh"
+SCRIPT_NAME="script.sh"
 
 if [ -z ${SNOW_HOST+x} ]; then read -p "VM Host: " SNOW_HOST; fi
 if [ -z ${SNOW_PORT+x} ]; then read -p "VM Port: " SNOW_PORT; fi
