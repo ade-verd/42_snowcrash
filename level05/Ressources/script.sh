@@ -13,5 +13,5 @@ chmod +x /opt/openarenaserver/script
 # 3. Display the output of getflag,
 echo "Waiting for 'getflag' output...\n"
 
-sleep 1m
+sleep 70s
 cat /tmp/flag05
