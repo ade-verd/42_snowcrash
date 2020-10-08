@@ -1,5 +1,5 @@
 #!/bin/bash
-GETFLAG_OUPUT="/tmp/getflag_output"
+GETFLAG_OUPUT="/tmp/output"
 
 set -x
 
