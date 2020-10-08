@@ -209,15 +209,7 @@ getflag
 
 ### Shell
 
-<<<<<<< HEAD
-- [abc](http://)
-
-### Cryptography
-
-- [abc](http://)
-=======
 - [Check ports in use](https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/)
 - [Man netcat](https://linux.die.net/man/1/nc)
 - [Man nm](https://linux.die.net/man/1/nm)
 - [Man access](https://linux.die.net/man/2/access)
->>>>>>> 19e33b0a02b1c951a3f8831b5f8efa2e732aa78b
