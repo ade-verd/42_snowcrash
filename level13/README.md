@@ -3,7 +3,7 @@
 ## Local script usage
 
 ```shell
-Usage: ./main.sh
+Usage: ./Ressources/main.sh
 ```
 
 ## Passwords and token
@@ -11,7 +11,7 @@ Usage: ./main.sh
 |         |                             |
 | ------- | --------------------------- |
 | level14 | `2A31L79asukciNyi8uppkEuSx` |
-| flag14  | `` |
+| flag14  | ``                          |
 | token   | `2A31L79asukciNyi8uppkEuSx` |
 
 ## Steps to resolve on VM
@@ -60,6 +60,7 @@ disassemble main
 > 0x0804859a <+14>:    cmp    $0x1092,%eax
 > [...]
 ```
+
 We can see that getuid is called, and a variable 'eax' is compared to 0x1092, which is 4242 in hexadecimal
 
 Let's put breakpoint to getuid, check the 'eax' value, and try to change it to 4242

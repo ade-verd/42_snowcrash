@@ -3,7 +3,7 @@
 ## Local script usage
 
 ```shell
-Usage: ./main.sh
+Usage: ./Ressources/main.sh
 ```
 
 ## Passwords and token
@@ -39,7 +39,7 @@ strings level07
 > getenv
 > [...]
 > LOGNAME
-> /bin/echo %s 
+> /bin/echo %s
 > [...]
 > /home/user/level07/level07.c
 > [...]

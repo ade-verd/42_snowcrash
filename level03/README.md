@@ -3,7 +3,7 @@
 ## Local script usage
 
 ```shell
-Usage: ./main.sh
+Usage: ./Ressources/main.sh
 ```
 
 ## Passwords and token
@@ -65,6 +65,6 @@ PATH=/tmp:$PATH
 
 ### SHELL
 
-- [What does s permission means ?](https://askubuntu.com/questions/431372/what-does-s-permission-means#:~:text=s%20(setuid)%20means%20set%20user%20ID%20upon%20execution.&text=In%20this%20s%20permission%20was,user%2DID%20mode%20is%20set.)
+- [What does s permission means ?](<https://askubuntu.com/questions/431372/what-does-s-permission-means#:~:text=s%20(setuid)%20means%20set%20user%20ID%20upon%20execution.&text=In%20this%20s%20permission%20was,user%2DID%20mode%20is%20set.>)
 - [What is /usr/bin/env](https://stackoverflow.com/questions/43793040/how-does-usr-bin-env-work-in-a-linux-shebang-line#:~:text=env%20is%20the%20name%20of%20a%20Unix%20program.&text=Therefore%2C%20%2Fusr%2Fbin%2F,that%20contains%20the%20python3%20executable.)
 - [How to add directory at beginning of PATH](http://www.troubleshooters.com/linux/prepostpath.htm)
