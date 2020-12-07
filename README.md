@@ -12,7 +12,7 @@ Each level folders contains these files:
 
 - `flag`: Password for the next user
 - `README`: How to find the password
-- `main.sh`: Main script to execute. It passes an other script (named `script.sh`) through ssh
+- `main.sh`: Main script to execute. It connects us through ssh and executes `script.sh` on virtual machine
 
 ## Setup VM (Ubuntu/Debian)
 
@@ -22,6 +22,6 @@ Requirements:
 - VirtualBox Guest Addition
 
 ```shell
-./createVM
-./startVM
+./scripts/vm/createVM.sh
+./scripts/vm/startVM.sh
 ```
